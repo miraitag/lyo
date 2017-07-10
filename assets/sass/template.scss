@@ -1,0 +1,24 @@
+.lyo{
+    &-profile{
+        align-content: center;
+        background: url('/assets/img/bg_profile.jpg') no-repeat center center/cover fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &__image{
+            background-color: red;
+            border-radius: 50%;
+            display: flex;
+            height: 350px;
+            justify-content: center;
+            margin: 0 auto;
+            overflow: hidden;
+            width: 350px;
+        }
+        &__title{
+            margin: 0 auto;
+            text-align: center;
+            width: 50%;
+        }
+    }
+}

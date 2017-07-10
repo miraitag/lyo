@@ -1,0 +1,85 @@
+@import './variables';
+
+body{
+	position: relative;
+}
+
+.mt-navigator{
+	display: flex;
+	position: fixed;
+	right: 15px;
+	top: 50%;
+	transform: display 300ms ease-in;
+	transform: translateY(-50%);
+	z-index: 99999;
+	&__content{
+		display: flex;
+		flex-direction: column;
+		height: auto;
+		width: 20px;
+		&-item{
+			height: 20px;
+			list-style: none;
+			margin-bottom: 20px;
+			position: relative;
+			width: 100%;
+			&:last-child{
+				margin-bottom: 0;
+			}
+			button{
+				@include resetButton;
+				background-color: $white;
+				border-radius: 50%;
+				border: 1px solid $grey;
+				cursor: pointer;
+				height: 100%;
+				transition: background-color 350ms ease-in;
+				width: 100%;
+				&:placeholder{
+					color: red;
+				}
+				&:hover{
+					@media all and (min-width: 769px) {
+						background-color: $black;
+						+ .mt-navigator-tooltip{
+							opacity: 1;	
+						}
+					}
+				}
+			}
+			.mt-navigator-tooltip{
+				align-items: center;
+				background-color: lightblue; 
+				border-radius: 5px;
+				color: $white;
+				display: flex;
+				font-size: 1em;
+				justify-content: center;
+				left: -140px;
+				min-width: 100px;
+				opacity: 0;
+				padding: 15px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				transition: opacty 350ms ease-in;
+				width: auto;
+				&:after{
+					content: "";
+				    background-color: lightblue;
+				    height: 10px;
+				    position: absolute;
+				    right: -5px;
+				    top: 50%;
+				    transform: translateY(-50%) rotate(50deg);
+				    width: 10px;
+				}
+			}
+			&.active{
+				button{
+					background-color: $black; 
+				}
+			}
+		}
+	}
+}

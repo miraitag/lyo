@@ -1,0 +1,20 @@
+body{
+	font-size: 16px;
+	@media all and (min-width: 768px) {
+		font-size: 14px;
+	}
+}
+
+.mt-layout{
+	height: 100vh;
+	&:nth-child(odd){
+		background-color: yellow;
+	}
+	&:nth-child(even){
+		background-color: green;
+	}
+}
+
+.mt-hh-total{
+	height: 100%;
+}
